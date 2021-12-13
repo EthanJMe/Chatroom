@@ -4,12 +4,12 @@ import Home from './Home'
 import Chat from './Chat'
 import About from './About'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import navBar from './navBar';
+import NavBar from './NavBar';
 
 function App() {
   return (
     <>
-    <navBar/>
+    <NavBar/>
     <Route exact path='/'>
         <Home />
       </Route>
