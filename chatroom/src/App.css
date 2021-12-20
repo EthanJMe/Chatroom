@@ -1,0 +1,27 @@
+:any-link {
+  text-decoration: none;
+  color: #000000;
+  
+}
+a:hover{
+  color: #000000 ;
+}
+.LogoCenter{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.circle {
+  border-radius: 50%;
+  background-color: beige;
+}
+.topNav{
+  background-color: black;
+}
+.bottomNav{
+  background-color: #44E0D4;
+}
+.space{
+  margin-left: auto;
+  margin-right: auto;
+}
