@@ -6,6 +6,7 @@ import About from './About'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TopNavBar from './TopNavBar';
 import BottomNavBar from './BottomNavBar';
+import Footer from './footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <About />
       </Route>
       </Switch>
+      <Footer/>
     </>
   );
 }
