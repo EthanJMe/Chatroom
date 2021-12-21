@@ -1,10 +1,19 @@
 import React from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
+import ring from './assets/eldenRing.png'
 
 function Home() {
     return (
-        <div>
-            
-        </div>
+        <Container fluid className='bg-1'>
+            <Row>
+                <Col className='bg-dark' sm={5}>
+                    {/* triple carousel go here? */}
+                </Col>
+                <Col sm={7}>
+                    <img className='topmargin' src={ring} alt='ring'></img>
+                </Col>
+            </Row>
+        </Container>
     )
 }
 
