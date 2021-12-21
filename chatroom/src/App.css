@@ -30,3 +30,9 @@ a:hover{
     border: none;
     padding: 0;
 }
+.topmargin{
+  margin: 10rem;
+}
+.bg-1{
+  background-color: #305265;
+}
