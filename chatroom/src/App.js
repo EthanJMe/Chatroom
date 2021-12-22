@@ -1,12 +1,13 @@
 import './App.css';
 import {Route, Switch} from 'react-router-dom'
-import Home from './Home'
-import Chat from './Chat'
-import About from './About'
+import Home from './bodies/Home'
+import Chat from './bodies/Chat'
+import About from './bodies/About'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TopNavBar from './TopNavBar';
-import BottomNavBar from './BottomNavBar';
-import Footer from './footer';
+import TopNavBar from './navbars/TopNavBar';
+import BottomNavBar from './navbars/BottomNavBar';
+import Footer from './navbars/footer';
+import ContactUsBody from './bodies/Contact';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
       </Route>
       <Route exact path='/About'>
         <About />
+      </Route>
+      <Route exact path = "/Contact">
+        <ContactUsBody/>
       </Route>
       </Switch>
       <Footer/>

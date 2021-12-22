@@ -1,6 +1,6 @@
 import { Navbar } from "react-bootstrap"
 import { Link } from "react-router-dom"
-import chatwareLogo from './assets/chatwareLogo.png'
+import chatwareLogo from '../assets/chatwareLogo.png'
 
 function NavBar() {
    let Logo = chatwareLogo

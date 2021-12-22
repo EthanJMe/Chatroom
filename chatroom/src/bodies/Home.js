@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import ring from './assets/eldenRing.png'
+import ring from '../assets/eldenRing.png'
 
 function Home() {
     return (
