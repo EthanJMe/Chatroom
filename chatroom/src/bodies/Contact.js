@@ -6,11 +6,11 @@ function ContactUsBody() {
     const handleShow = () => setShow(true); //function to change show to true and load Modal
     const handleClose = () => setShow(false);
     return (
-        <div>
+        <div className="bg-1">
 
-            <h2 className='center'>please enter your feedback below</h2>
+            <h2 className="bodyText">please enter your feedback below</h2>
             <Form>
-                <Form.Control as="textarea" style={{ height: '70vh', width: '98vw' }} />
+                <Form.Control as="textarea" style={{ height: '70vh', width: '60vw' }} />
                 <button onClick={(e) => {
                     e.preventDefault();
                     handleShow()
