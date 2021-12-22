@@ -6,7 +6,7 @@ function Home() {
     return (
         <Container fluid className='bg-1'>
             <Row>
-                <Col className='bg-dark' sm={5}>
+                <Col className='bg-black' sm={3}>
                     {/* triple carousel go here? */}
                 </Col>
                 <Col sm={7}>
