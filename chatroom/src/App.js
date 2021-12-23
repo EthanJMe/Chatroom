@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TopNavBar from './TopNavBar';
 import BottomNavBar from './BottomNavBar';
 import Footer from './footer';
+import ContactUsBody from './Contact';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
       </Route>
       <Route exact path='/About'>
         <About />
+      </Route>
+      <Route exact path='/Contact'>
+      <ContactUsBody/>
       </Route>
       </Switch>
       <Footer/>
