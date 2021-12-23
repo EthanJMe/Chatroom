@@ -39,3 +39,29 @@ a:hover{
 .bg-black{
   background-color: #131112;
 }
+.pics {
+  padding: 20px;
+  margin-top: 20px;
+  max-width: 310px;
+  border-radius: 100px;
+  margin-bottom: 60px;
+}
+.box {
+  margin-top: 110px;
+  background-color: azure;
+  border-radius: 40px;
+  text-align: center;
+  margin-bottom: 100px;
+}
+.title {
+  border-radius: 10px;
+  background-color: #44E0D4;
+  max-width: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+p {
+  padding-bottom: 20px;
+}
