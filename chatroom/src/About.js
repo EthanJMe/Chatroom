@@ -14,7 +14,7 @@ function About() {
                         <div class='box'>
                             <img src={ethan} alt='done with mondays' className="pics" />
                             <img src={solomon} alt='i never look like this' className="pics" />
-                            <img src={dustin} alt='ge is a badass and he knows it' className="pics" />
+                            <img src={dustin} alt='he is a badass and he knows it' className="pics" />
                             <div class='title'>
                                 <h3>About Us</h3>
                             </div>
