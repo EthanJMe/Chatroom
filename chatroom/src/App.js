@@ -8,7 +8,7 @@ import TopNavBar from './TopNavBar';
 import BottomNavBar from './BottomNavBar';
 import Footer from './footer';
 import ContactUsBody from './Contact';
-import UserPage from './LoginPage';
+import LoginPage from './LoginPage';
 function App() {
   return (
     <>
@@ -28,7 +28,7 @@ function App() {
       <ContactUsBody/>
       </Route>
       <Route exact path = "/User">
-        <UserPage/>
+        <LoginPage/>
       </Route>
       </Switch>
       <Footer/>
