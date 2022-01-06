@@ -1,6 +1,6 @@
-import ethan from "./assets/Ethan.png"
-import solomon from "./assets/solomon1.jpg"
-import dustin from "./assets/dustin.jpg"
+import ethan from "../assets/Ethan.png"
+import solomon from "../assets/solomon1.jpg"
+import dustin from "../assets/dustin.jpg"
 import { Container, Row, Col } from "react-bootstrap"
 
 

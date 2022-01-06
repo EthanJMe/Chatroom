@@ -1,10 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import ring from './assets/eldenRing.png'
-import CarouselStack from './carouselStack'
-import GamesCarousel from './carouselGames'
-import { carouselContentGames } from './carouselContent'
-
+import ring from '../assets/eldenRing.png'
+import CarouselStack from '../carousel/carouselStack'
 function Home() {
     return (
         <Container fluid className='bg-1'>

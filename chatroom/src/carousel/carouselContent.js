@@ -1,12 +1,12 @@
-import nvidia from './assets/nvidia.png';
-import razr from './assets/razr.png';
-import alienware from './assets/alienware.png';
-import steam from './assets/steam.png';
-import xbox from './assets/xbox.png';
-import playstation from './assets/playstation.jpg';
-import eldenRing from './assets/eldenRing.png';
-import halo from './assets/halo.jpg';
-import battlefield from './assets/battlefield.jpg';
+import nvidia from '../assets/nvidia.png';
+import razr from '../assets/razr.png';
+import alienware from '../assets/alienware.png';
+import steam from '../assets/steam.png';
+import xbox from '../assets/xbox.png';
+import playstation from '../assets/playstation.jpg';
+import eldenRing from '../assets/eldenRing.png';
+import halo from '../assets/halo.jpg';
+import battlefield from '../assets/battlefield.jpg';
 
 let carouselContentPlatforms = [
     {

@@ -1,14 +1,14 @@
-import './App.css';
+import './css/App.css';
 import {Route, Switch} from 'react-router-dom'
-import Home from './Home'
-import Chat from './Chat'
-import About from './About'
+import Home from './pages/Home'
+import baseChat from './pages/baseChat'
+import About from './pages/About'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import TopNavBar from './TopNavBar';
-import BottomNavBar from './BottomNavBar';
-import Footer from './footer';
-import ContactUsBody from './Contact';
-import LoginPage from './LoginPage';
+import TopNavBar from './navbars/TopNavBar';
+import BottomNavBar from './navbars/BottomNavBar';
+import Footer from './navbars/footer';
+import ContactUsBody from './pages/Contact';
+import LoginPage from './pages/LoginPage';
 function App() {
   return (
     <>
@@ -19,7 +19,7 @@ function App() {
         <Home />
       </Route>
       <Route exact path='/Chat'>
-        <Chat />
+        <baseChat />
       </Route>
       <Route exact path='/About'>
         <About />
@@ -29,6 +29,9 @@ function App() {
       </Route>
       <Route exact path = "/User">
         <LoginPage/>
+      </Route>
+      <Route exact path="/Rooms">
+      
       </Route>
       </Switch>
       <Footer/>
