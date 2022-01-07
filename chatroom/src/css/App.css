@@ -68,3 +68,6 @@ p {
 .miniMargin {
   margin-top:1em;
 }
+.chatInput {
+display: inline-block;
+}

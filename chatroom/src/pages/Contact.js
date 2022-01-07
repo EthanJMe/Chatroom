@@ -1,5 +1,5 @@
 import { Form } from "react-bootstrap"
-import ContactUsModal from "./ContactUsModal";
+import ContactUsModal from "../ContactUsModal";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap"
 
