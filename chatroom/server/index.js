@@ -7,7 +7,7 @@ const app = express();
 const PORT = 5000;
 const CONNECTION_URL = "mongodb://localhost:27071/chats";
 
-app.use(express.json({ limit: "30mb", extendedd: true }));
+app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
