@@ -1,7 +1,7 @@
 import './css/App.css';
 import {Route, Switch} from 'react-router-dom'
 import Home from './pages/Home'
-import baseChat from './pages/baseChat'
+import BaseChat from './pages/baseChat'
 import About from './pages/About'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TopNavBar from './navbars/TopNavBar';
@@ -31,7 +31,9 @@ function App() {
         <LoginPage/>
       </Route>
       <Route exact path="/Rooms">
-      
+      </Route>
+      <Route exact path="/Base">
+        <BaseChat/>
       </Route>
       </Switch>
       <Footer/>
