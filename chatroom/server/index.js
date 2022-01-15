@@ -5,7 +5,7 @@ import ChatRoutes from './routers/chats.js';
 
 const app = express();
 const PORT = 5000;
-const CONNECTION_URL = "mongodb://localhost:27071/chats";
+const CONNECTION_URL = "mongodb://localhost:27017/chats";
 
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
