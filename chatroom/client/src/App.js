@@ -31,9 +31,7 @@ function App() {
         <LoginPage/>
       </Route>
       <Route exact path="/Rooms">
-      </Route>
-      <Route exact path="/Base">
-        <BaseChat/>
+      <BaseChat/>
       </Route>
       </Switch>
       <Footer/>
