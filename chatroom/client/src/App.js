@@ -16,8 +16,8 @@ function App() {
   return (
     <>
     <TopNavBar/>
-    <button onClick = {api.testGet()}>Test Get</button>
-    <button onClick = {api.testPost()}>Test Post</button>
+    <button onClick = {() => api.testGet()}>Test Get</button>
+    <button onClick = {() => api.testPost()}>Test Post</button>
     <BottomNavBar/>
     <Switch>
     <Route exact path='/'>
