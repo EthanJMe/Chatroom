@@ -9,10 +9,15 @@ import BottomNavBar from './navbars/BottomNavBar';
 import Footer from './navbars/footer';
 import ContactUsBody from './pages/Contact';
 import LoginPage from './pages/LoginPage';
+
+import * as api from './api/index';
+
 function App() {
   return (
     <>
     <TopNavBar/>
+    <button onClick = {api.testGet()}>Test Get</button>
+    <button onClick = {api.testPost()}>Test Post</button>
     <BottomNavBar/>
     <Switch>
     <Route exact path='/'>
