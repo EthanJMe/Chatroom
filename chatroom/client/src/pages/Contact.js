@@ -1,7 +1,7 @@
 import { Form } from "react-bootstrap"
 import ContactUsModal from "../ContactUsModal";
 import { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap"
+import {Button, Container, Row, Col } from "react-bootstrap"
 
 function ContactUsBody() {
     const [show, setShow] = useState(false); //sets show to false, which keeps the Modal from loading
@@ -14,12 +14,13 @@ function ContactUsBody() {
         <div className="box">
 
             <h2 className="bodyText">please enter your feedback below</h2>
-            <Form>
-                <Form.Control as="textarea" style={{ height: '70vh', width: '45vw' }} />
-                <button onClick={(e) => {
+            <Form className="">
+                <Form.Control as="textarea" style={{ height: '20vh', width: '45vw', marginLeft: 'auto', marginRight: 'auto' }} />
+                
+                <Button onClick={(e) => {
                     e.preventDefault();
                     handleShow()
-                }}>submit here</button>
+                }}>Submit here</Button>
             </Form>
             <ContactUsModal setShow={setShow} show={show} handleClose={handleClose} />
         </div>

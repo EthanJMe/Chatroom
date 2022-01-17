@@ -7,7 +7,7 @@ import { carouselContentGames, carouselContentHardware, carouselContentPlatforms
 
 function CarouselStack () {
     return (
-        <Col>
+        <Col lg={12}>
             <Row>
                 <GamesCarousel content={carouselContentGames}/>
             </Row>
