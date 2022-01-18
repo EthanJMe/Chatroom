@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import localData from '../SiteData';
+// import localData from '../SiteData';
 
 export const chatSlice = createSlice({
     name: 'chatSlice',
