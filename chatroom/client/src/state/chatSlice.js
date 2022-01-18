@@ -1,22 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
-import localData from '../SiteData';
 
 export const chatSlice = createSlice({
     name: 'chatSlice',
     initialState: {
-        content: { chatData: null }
+        content: { chatData: null },
+        messageContent: []
     },
     reducers: {
-        addChat: (state, action) => {
+        redux_addChat: (state, action) => {
             console.log(action.payload)
             state.content.push(action.payload)
         },
-        deleteChat: (state, action) => {
+        redux_deleteChat: (state, action) => {
             state.content.splice(action.payload, 1);
-            localStorage.setItem("storedContent", JSON.stringify(state.content))
+        },
+        redux_saveChatContents: (state, action) => {
+            console.log(action.payload)
+            state.messageContent = action.payload
         }
     }
 })
 
-export const { addChat, deleteChat } = chatSlice.actions;
+export const { addChat, deleteChat, saveChatContents, } = chatSlice.actions;
 export default chatSlice.reducer;
