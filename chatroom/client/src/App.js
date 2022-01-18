@@ -9,7 +9,7 @@ import BottomNavBar from './navbars/BottomNavBar';
 import Footer from './navbars/footer';
 import ContactUsBody from './pages/Contact';
 import LoginPage from './pages/LoginPage';
-import {getTestData, postTestData} from './actions/index';
+import {getTestData, postTestData} from './actions/index.js';
 import {useDispatch} from 'react-redux';
 
 import * as api from './api/index';
