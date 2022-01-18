@@ -3,6 +3,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 import ChatRoutes from './routers/chats.js';
 import TestRoutes from './routers/test.js';
+import UserRoutes from './routers/users';
 
 
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use('/chat', ChatRoutes)
+app.use('/users', UserRoutes)
 app.use('/test', TestRoutes)
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
