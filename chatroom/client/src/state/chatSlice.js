@@ -4,7 +4,8 @@ import { createSlice } from '@reduxjs/toolkit';
 export const chatSlice = createSlice({
     name: 'chatSlice',
     initialState: {
-        content: { chatData: null }
+        content: { chatData: null },
+        messageContent: []
     },
     reducers: {
         redux_addChat: (state, action) => {
@@ -17,9 +18,14 @@ export const chatSlice = createSlice({
         },
         redux_getChat: (state, action) => {
             state.content = action.payload;
+        },
+        redux_saveChatContents: (state, action) => {
+            console.log(action.payload)
+            state.messageContent = action.payload
         }
     }
 })
 
 export const { redux_addChat, redux_deleteChat, redux_getChat } = chatSlice.actions;
+export const { addChat, deleteChat, saveChatContents, } = chatSlice.actions;
 export default chatSlice.reducer;
