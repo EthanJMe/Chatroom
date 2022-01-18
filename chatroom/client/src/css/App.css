@@ -1,7 +1,9 @@
 :any-link {
   text-decoration: none;
   color: #000000;
-  
+}
+html {
+  background-color: #305265;
 }
 a:hover{
   color: #000000 ;
@@ -15,8 +17,12 @@ a:hover{
   border-radius: 50%;
   background-color: beige;
 }
-.topNav{
+.header{
   background-color: black;
+}
+.topNav{
+  background-color: #44E0D4;
+  margin-bottom: 50px;
 }
 .bottomNav{
   background-color: #44E0D4;
@@ -25,6 +31,19 @@ a:hover{
   margin-left: auto;
   margin-right: auto;
 }
+.spacev{
+  margin-top:  20px;
+  margin-bottom: 20px;
+}
+.right{
+  text-align: right;
+}
+.center {
+  text-align: center;
+}
+.round {
+  border-radius: 10px;
+}
 .unButton{
     background: none;
     border: none;
@@ -32,6 +51,9 @@ a:hover{
 }
 .topmargin{
   margin: 10rem;
+}
+.bg-W {
+  background-color: white;
 }
 .bg-1{
   background-color: #305265;
@@ -47,7 +69,6 @@ a:hover{
   margin-bottom: 60px;
 }
 .box {
-  margin-top: 110px;
   background-color: azure;
   border-radius: 40px;
   text-align: center;
@@ -66,8 +87,33 @@ p {
   padding-bottom: 20px;
 }
 .miniMargin {
+  margin-left: auto;
+  margin-right: auto;
   margin-top:1em;
+  margin-bottom: 1em;
 }
 .chatInput {
 display: inline-block;
+}
+.messageBox {
+  margin-top: 500px;
+  border-radius: 10px;
+  background-color: white;
+  flex-direction: column-reverse;
+  display: flex;
+  overflow: scroll;
+  height: 600px;
+  
+  padding-bottom: 40px;
+  text-align: right;
+}
+.messageForm {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -1px;
+  margin-bottom:80px;
+  width: 50%;
+}
+::-webkit-scrollbar {
+  display: none;
 }

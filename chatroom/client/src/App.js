@@ -9,12 +9,12 @@ import BottomNavBar from './navbars/BottomNavBar';
 import Footer from './navbars/footer';
 import ContactUsBody from './pages/Contact';
 import LoginPage from './pages/LoginPage';
-
+import { Col, Row, Container, Button, Form } from "react-bootstrap"
 import * as api from './api/index';
 
 function App() {
   return (
-    <>
+    <div fluid className="bg-1">
     <TopNavBar/>
     <button onClick = {() => api.testGet()}>Test Get</button>
     <button onClick = {() => api.testPost()}>Test Post</button>
@@ -40,7 +40,7 @@ function App() {
       </Route>
       </Switch>
       <Footer/>
-    </>
+      </div>
   );
 }
 

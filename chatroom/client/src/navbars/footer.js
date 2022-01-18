@@ -10,7 +10,7 @@ function footer() {
     
     return (
         <div>
-            <Navbar className="bottomNav">
+            <Navbar className="bottomNav fixed-bottom">
                 <button onClick={scrollToTop} className="space unButton">back to top</button>
             </Navbar>
         </div>

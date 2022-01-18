@@ -27,15 +27,7 @@ function About() {
                             </p>
                             </div>
                     </Col>
-
                 </Row>
-               
-                        
-                           
-                        
-
-                    
-                
             </Container>
         </div>
     )

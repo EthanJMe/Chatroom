@@ -6,7 +6,7 @@ function NavBar() {
    let Logo = chatwareLogo
     return (
         <div>
-            <Navbar className="topNav">
+            <Navbar className="header">
                 <Link className="LogoCenter" to='/'><img  src={Logo} alt = ''/></Link>
                 <Link to = '/User'><div className="circle">User</div></Link>
             </Navbar>
