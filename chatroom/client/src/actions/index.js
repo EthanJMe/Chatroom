@@ -1,6 +1,6 @@
 import * as api from '../api/index';
 
-import { addChat, deleteChat } from '../state/chatSlice';
+import { redux_addChat, redux_addChat, redux_getChat } from '../state/chatSlice';
 
 export const getTestData = () => async (dispatch) => {
     try {
@@ -22,17 +22,17 @@ export const postTestData = () => async (dispatch) => {
 
 export const retrieveChats = () => async (dispatch) => {
     try {
-        const {data} = await api.getChats()
-        dispatch(addChat(data))
+        const {data} = await api.axios_getChat()
+        dispatch(redux_addChat(data))
     } catch (error) {
         console.log(error)
     }
 }
 
-export const addChats = () => async (dispatch) => {
+export const addChats = (data) => async (dispatch) => {
     try {
-        const {data} = await api.addChat()
-        console.log(data)
+        await api.axios_addChat(data)
+        dispatch(redux_addChat(data))
     } catch (error) {
         console.log(error)
     }
