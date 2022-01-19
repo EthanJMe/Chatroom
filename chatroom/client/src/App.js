@@ -46,33 +46,7 @@ function App() {
       </Switch>
       <Footer/>
       </div>
-    <>
-      <TopNavBar />
-      <button onClick = {dispatch(getTestData)}>Test Get</button>
-      <button onClick= {dispatch(postTestData)}>Test Post</button>
-      <BottomNavBar />
-      <Switch>
-        <Route exact path='/'>
-          <Home />
-        </Route>
-        <Route exact path='/Chat'>
-          <baseChat />
-        </Route>
-        <Route exact path='/About'>
-          <About />
-        </Route>
-        <Route exact path='/Contact'>
-          <ContactUsBody />
-        </Route>
-        <Route exact path="/User">
-          <LoginPage />
-        </Route>
-        <Route exact path="/Rooms">
-          <BaseChat />
-        </Route>
-      </Switch>
-      <Footer />
-    </></>
+    </>
   );
 }
 
