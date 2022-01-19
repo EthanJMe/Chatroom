@@ -12,7 +12,7 @@ export const getUsers = async (req, res) => {
 }
 
 export const addUsers = async (req, res) => {
-    const chat = req.body;
+    const user = req.body;
 
     const newUserInfo = new Users({ ...user, createdAt: new Date().toISOString() })
 
