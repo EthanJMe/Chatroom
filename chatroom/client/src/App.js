@@ -22,7 +22,7 @@ import ParticleBackground from './pages/ParticleBackground'
 function App() {
   const dispatch = useDispatch()
   return (
-    <>
+    
       <div fluid className="bg-1">
         <ParticleBackground></ParticleBackground>
         <div className="">
@@ -57,8 +57,7 @@ function App() {
           <Footer />
         </div>
       </div>
-    </>
-
+    
 
 
   );

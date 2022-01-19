@@ -3,10 +3,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { addChats } from "../actions";
 import socket from "../socket/Socket"
-import { selectChat } from "../state/chatSlice";
+import { SelectChat } from "../state/chatSlice";
 
 function BaseChat() {
-    const dbmessage = useSelector(selectChat);
+    const dbmessage = useSelector(SelectChat);
     const dispatch = useDispatch();
     const [message, setMessage] = useState([]);
     const [room, setRoom] = useState("public");
@@ -35,13 +35,13 @@ function BaseChat() {
                 <Container>
                     <Row>
                         <Col className='messageBox top' >
-                            {messageArray.map((messageList, i) => {
+                           {messageArray.map((messageList, i) => {
                                 return (
                                     <div key={i} className="">
                                         <h2>{messageList.message}</h2>
                                     </div>
                                 )
-                            })}
+                                })}
                         </Col>
                     </Row>
 
