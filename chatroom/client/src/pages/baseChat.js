@@ -21,10 +21,10 @@ function BaseChat() {
 
     return (
         <>
-            <Container fluid className='bg-13'>
+            <Container fluid className=''>
                 <Container>
                     <Row>
-                        <Col className='messageBox' >
+                        <Col className='messageBox top' >
                             {messageArray.map((messageList, i) => {
                                 return (
                                     <div key={i} className="">
@@ -36,7 +36,7 @@ function BaseChat() {
                     </Row>
 
                     <Row>
-                        <Col >
+                        <Col className="top">
                             <Form className="messageForm center" onSubmit={handleSubmit}>
                                 <Form.Control type="text" placeholder="enter your message here" onChange={updateField} name="message" />
                                 <Button onClick={handleSubmit}>Send</Button>
