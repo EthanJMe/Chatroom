@@ -26,6 +26,6 @@ export const chatSlice = createSlice({
     }
 })
 
-export const { redux_addChat, redux_deleteChat, redux_getChat } = chatSlice.actions;
-export const { addChat, deleteChat, saveChatContents, } = chatSlice.actions;
+export const { redux_addChat, redux_deleteChat, redux_getChat, redux_saveChatContents } = chatSlice.actions;
+export const {selectChat } = (state) => state.chat.content;
 export default chatSlice.reducer;
