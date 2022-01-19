@@ -2,10 +2,12 @@ import { Col, Row, Container, Button, Form } from "react-bootstrap"
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { addChats } from "../actions";
-
+import socket from "../socket/Socket"
 
 function BaseChat() {
     const dispatch = useDispatch();
+    const [message, setMessage] = useState([]);
+    const [room, setRoom] = useState("public");
     const [messageArray, setMessageArray] = useState([])
     const [response, setResponse] = useState({ message: '' })
     const handleSubmit = (e) => {
@@ -13,12 +15,14 @@ function BaseChat() {
         setMessageArray([response, ...messageArray])
        setMessageArray([...messageArray,response])
         dispatch(addChats(messageArray))
+        socket.emit("usermessage", room, message);
     }
     const updateField = (e) => {
         setResponse({
             ...response,
             [e.target.name]: e.target.value
         })
+        setMessage(e.target.value);
     }
 
     
