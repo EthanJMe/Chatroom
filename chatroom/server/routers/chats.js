@@ -7,6 +7,6 @@ const router = express.Router();
 
 router.get('/get', getChats);
 
-router.post('/post',  addChat); // auth deleted
+router.post('/post', addChat); // auth deleted
 
 export default router;

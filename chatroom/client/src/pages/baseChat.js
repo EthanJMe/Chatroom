@@ -1,35 +1,34 @@
 import { Col, Row, Container, Button, Form } from "react-bootstrap"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { addChats } from "../actions";
+import { addChats, retrieveChats } from "../actions";
 import socket from "../socket/Socket"
-import { SelectChat, redux_saveChatContents } from "../state/chatSlice";
+import { SelectChat } from "../state/chatSlice";
 
 function BaseChat() {
-    const dbmessage = useSelector(SelectChat);
-    console.log(dbmessage);
+    const messages = useSelector(SelectChat);
+    console.log(messages);
     const dispatch = useDispatch();
-    const [message, setMessage] = useState([]);
+    const [message, setMessage] = useState();
     const [room, setRoom] = useState("public");
-    const [messageArray, setMessageArray] = useState(dbmessage)
-    const [response, setResponse] = useState({ message: '' })
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // setMessage(response); 
-        // setMessageArray([response, ...messageArray])
         console.log(message);
         dispatch(addChats(message))
-        socket.emit("usermessage", room, message);
+        socket.emit("message", message);
     }
+
     const updateField = (e) => {
         setMessage({
-            // ...response,
             [e.target.name]: e.target.value
         })
        
     }
 
-    
+        useEffect (() => {
+            dispatch(retrieveChats()) //triggers the db call
+            }, [dispatch]);
 
     return (
         <>
@@ -37,7 +36,7 @@ function BaseChat() {
                 <Container>
                     <Row>
                         <Col className='messageBox top' >
-                           {dbmessage.map((messageList, i) => {
+                           {messages.map((messageList, i) => {
                                console.log(messageList);
                                 return (
                                     <div key={i} className="">
