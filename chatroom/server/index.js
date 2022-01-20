@@ -7,8 +7,18 @@ import UserRoutes from './routers/users.js';
 // socket
 import { createServer } from "http"
 import { Server } from "socket.io";
+// heroku
+import path from 'path';
+import {fileURLToPath} from 'url';
 
 const app = express();
+
+// for heroku
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
@@ -52,7 +62,7 @@ io.on('connection', (socket) => {
 });
 
 
-const PORT = 5000;
+const SERVERPORT = (process.env.PORT || 5000);
 const CONNECTION_URL = "mongodb+srv://Loneflint:Kolomon01@cluster0.dydau.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 app.use(express.json({ limit: "30mb", extended: true }));
@@ -64,5 +74,5 @@ app.use('/users', UserRoutes)
 app.use('/test', TestRoutes)
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => httpServer.listen(PORT, () => console.log(`Server is running on port ${PORT}`)))
+    .then(() => httpServer.listen(SERVERPORT, () => console.log(`Server is running on port ${SERVERPORT}`)))
     .catch((e) => console.log(e));

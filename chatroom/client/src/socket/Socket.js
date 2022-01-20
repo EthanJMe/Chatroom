@@ -1,9 +1,9 @@
 import io from "socket.io-client";
-const ENDPOINT = "http://localhost:5000"
+// const ENDPOINT = "http://localhost:5000"
 
-const socket = io(ENDPOINT);
+// const socket = io(ENDPOINT);
 
-
+const socket = io()
 socket.on('connect', () => {
   //console.log(`connected as ${socket.id}`)
   socket.emit("userJoin", "public")

@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.164c1307.css",
+    "main.js": "/static/js/main.131882aa.js",
+    "static/media/solomon1.jpg": "/static/media/solomon1.e5b907ef12bf4eb37333.jpg",
+    "static/media/eldenRing.png": "/static/media/eldenRing.60ab884e7e7a2d601bf9.png",
+    "static/media/dustin.jpg": "/static/media/dustin.b6f18393201ef032b9f1.jpg",
+    "static/media/Ethan.png": "/static/media/Ethan.21d527b1e7d373cccfd1.png",
+    "static/media/halo.jpg": "/static/media/halo.14478293422c520f85e1.jpg",
+    "static/media/battlefield.jpg": "/static/media/battlefield.0d8aba7b1408c4b2fb6e.jpg",
+    "static/media/alienware.png": "/static/media/alienware.25cecf000af15a4b6f98.png",
+    "static/media/razr.png": "/static/media/razr.3ffe4ca6bda48c2e40af.png",
+    "static/media/chatwareLogo.png": "/static/media/chatwareLogo.44d9079add116459069f.png",
+    "static/media/playstation.jpg": "/static/media/playstation.a738b252759d8af8a789.jpg",
+    "static/media/nvidia.png": "/static/media/nvidia.f1bca15c21432dd8442e.png",
+    "static/media/xbox.png": "/static/media/xbox.b741100e3775e1248eeb.png",
+    "index.html": "/index.html",
+    "main.164c1307.css.map": "/static/css/main.164c1307.css.map",
+    "main.131882aa.js.map": "/static/js/main.131882aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.164c1307.css",
+    "static/js/main.131882aa.js"
+  ]
+}
