@@ -1,6 +1,6 @@
 import * as api from '../api/index';
 
-import { redux_addChat, redux_getChat } from '../state/chatSlice';
+import { redux_addChat, redux_getChat, redux_saveChatContents } from '../state/chatSlice';
 import { redux_addUsers, redux_getUsers } from '../state/userSlice';
 
 export const getTestData = () => async (dispatch) => {
@@ -31,6 +31,7 @@ export const retrieveChats = () => async (dispatch) => {
 }
 
 export const addChats = (data) => async (dispatch) => {
+    console.log(data);
     try {
         await api.axios_addChat(data)
         dispatch(redux_addChat(data))

@@ -3,10 +3,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { addChats } from "../actions";
 import socket from "../socket/Socket"
-import { SelectChat } from "../state/chatSlice";
+import { SelectChat, redux_saveChatContents } from "../state/chatSlice";
 
 function BaseChat() {
     const dbmessage = useSelector(SelectChat);
+    console.log(dbmessage);
     const dispatch = useDispatch();
     const [message, setMessage] = useState([]);
     const [room, setRoom] = useState("public");
@@ -14,17 +15,18 @@ function BaseChat() {
     const [response, setResponse] = useState({ message: '' })
     const handleSubmit = (e) => {
         e.preventDefault();
-        setMessageArray([response, ...messageArray])
-       setMessageArray([...messageArray,response])
-        dispatch(addChats(messageArray))
+        // setMessage(response); 
+        // setMessageArray([response, ...messageArray])
+        console.log(message);
+        dispatch(addChats(message))
         socket.emit("usermessage", room, message);
     }
     const updateField = (e) => {
-        setResponse({
-            ...response,
+        setMessage({
+            // ...response,
             [e.target.name]: e.target.value
         })
-        setMessage(e.target.value);
+       
     }
 
     
@@ -35,7 +37,8 @@ function BaseChat() {
                 <Container>
                     <Row>
                         <Col className='messageBox top' >
-                           {messageArray.map((messageList, i) => {
+                           {dbmessage.map((messageList, i) => {
+                               console.log(messageList);
                                 return (
                                     <div key={i} className="">
                                         <h2>{messageList.message}</h2>

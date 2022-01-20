@@ -8,8 +8,8 @@ export const testPost = () => API.post('/test/post');
 
 export const axios_getChat = () => API.get('/chat/get');
 
-export const axios_addChat = (chat) => API.post('/chat/post');
+export const axios_addChat = (chat) => API.post('/chat/post', chat);
 
 export const axios_getUsers = () => API.get('/users/get');
 
-export const axios_addUsers = (users) => API.post('/users/post');
+export const axios_addUsers = (users) => API.post('/users/post', users);
