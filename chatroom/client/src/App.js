@@ -3,7 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import BaseChat from './pages/baseChat'
 import About from './pages/About'
-import UserPage from './pages/UserPage'
+import UserPage from './pages/userPage'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TopNavBar from './navbars/TopNavBar';
 import BottomNavBar from './navbars/BottomNavBar';

@@ -197,3 +197,12 @@ display: inline-block;
   border-radius: 50%;
   width: 100%;
 }
+.chatCover {
+  
+}
+.usersJoined {
+  text-align: center;
+  background-color: white;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
+}

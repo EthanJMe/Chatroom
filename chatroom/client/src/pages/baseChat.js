@@ -23,35 +23,58 @@ function BaseChat() {
         setMessage({
             [e.target.name]: e.target.value
         })
-       
+
     }
 
-        useEffect (() => {
-            dispatch(retrieveChats()) //triggers the db call
-            }, [dispatch]);
+    useEffect(() => {
+        dispatch(retrieveChats()) //triggers the db call
+    }, [dispatch]);
 
     return (
         <>
             <Container fluid="true" className='center'>
-                <Container>
-                    <Row>
-                        <Col className='messageBox top' >
-                           {messages.map((messageList, i) => {
-                               console.log(messageList);
-                                return (
-                                    <div key={i} className="">
-                                        <h2>{messageList.message}</h2>
-                                    </div>
-                                )
-                                })}
+                <Container className="box top ">
+                    <Row className="miniMargin">
+                        <div><br /></div>
+                        <Col xs={8} className="contactTitle top">
+                            <h2 className="top">Room Title</h2>
                         </Col>
                     </Row>
-
+                    <Row  className="miniMargin top ">
+                        <Col xs={3} className="top">
+                            <div className="usersJoined">
+                                <h2 >Avatar:User</h2>
+                                <h2 >Avatar:User</h2>
+                                <h2 >Avatar:User</h2>
+                                <h2 >Avatar:User</h2>
+                            </div>
+                        </Col>
+                        <Col xs={8} className='messageBox top' >
+                            <div className="chatCover"></div>
+                            <Container>{messages.map((messageList, i) => {
+                                    console.log(messageList);
+                                    return (
+                                        <div key={i} className="">
+                                            <h2>{messageList.message}</h2>
+                                        </div>
+                                    )
+                                })}
+                                </Container>
+                                <Container>
+                                    
+                                </Container>
+                                
+                            
+                        </Col>
+                    </Row>
                     <Row>
-                        <Col className="top">
-                            <Form className="messageForm center" onSubmit={handleSubmit}>
+                        <Col xs={3}></Col>
+                        <Col xs={9} className="top text-center">
+                            <Form className="messageForm " onSubmit={handleSubmit}>
                                 <Form.Control type="text" placeholder="enter your message here" onChange={updateField} name="message" />
-                                <Button onClick={handleSubmit}>Send</Button>
+                                <button className="bg-0 unout miniMargin btn-outline-dark btn-lg" onClick={handleSubmit}>
+                                    Send
+                                </button>
                             </Form>
                         </Col>
                     </Row>
