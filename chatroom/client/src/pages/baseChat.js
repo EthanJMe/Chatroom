@@ -4,20 +4,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addChats } from "../actions";
 import socket from "../socket/Socket"
 import { selectChat } from "../state/chatSlice";
+import rooms from '../Rooms'
+const Input = document.getElementById('input');
 
 function BaseChat() {
     const dbmessage = useSelector(selectChat);
     const dispatch = useDispatch();
     const [message, setMessage] = useState([]);
-    const [room, setRoom] = useState("public");
+    const [room, setRoom] = useState(rooms);
     const [messageArray, setMessageArray] = useState(dbmessage)
     const [response, setResponse] = useState({ message: '' })
     const handleSubmit = (e) => {
         e.preventDefault();
         setMessageArray([response, ...messageArray])
-       setMessageArray([...messageArray,response])
         dispatch(addChats(messageArray))
         socket.emit("usermessage", room, message);
+        Input.value = "";
     }
     const updateField = (e) => {
         setResponse({
@@ -26,33 +28,34 @@ function BaseChat() {
         })
         setMessage(e.target.value);
     }
-
-    
-
     return (
         <>
-            <Container fluid className=''>
+            <Container fluid="true" className='center'>
                 <Container>
-                    <Row>
-                        <Col className='messageBox top' >
-                            {messageArray.map((messageList, i) => {
-                                return (
-                                    <div key={i} className="">
-                                        <h2>{messageList.message}</h2>
-                                    </div>
-                                )
-                            })}
-                        </Col>
-                    </Row>
-
-                    <Row>
-                        <Col className="top">
-                            <Form className="messageForm center" onSubmit={handleSubmit}>
-                                <Form.Control type="text" placeholder="enter your message here" onChange={updateField} name="message" />
-                                <Button onClick={handleSubmit}>Send</Button>
-                            </Form>
-                        </Col>
-                    </Row>
+                    <div className="box top">
+                        <h1>{`room: ${room[2].name}`}</h1>
+                        <Row xs={2} className="center">
+                            <Col className={`${room[2].name}MessageBox top`} >
+                                {messageArray.map((messageList, i) => {
+                                    return (
+                                        <div key={i} className="">
+                                            <h2>{messageList.message}</h2>
+                                        </div>
+                                    )
+                                })}
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col className="top">
+                                <Form className="messageForm center" onSubmit={handleSubmit}>
+                                    <Form.Control id="input" type="text" placeholder="enter your message here" onChange={updateField} name="message"></Form.Control>
+                                    <button className="bg-0 unout miniMargin btn-outline-dark btn-lg" onClick={handleSubmit}>
+                                        Send
+                                    </button>
+                                </Form>
+                            </Col>
+                        </Row>
+                    </div>
                 </Container>
             </Container>
         </>

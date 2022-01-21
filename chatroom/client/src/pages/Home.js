@@ -8,12 +8,11 @@ function Home() {
         <Container fluid className='bg-1 carouselStack'>
 
             <Row>
-                <Col className='carouselBorder' sm={3}>
+                <Col className='carouselBorder top' sm={3}>
                     <CarouselStack />
                     {/* <img src={carouselContentGames[0].carouselImg}/> */}
                 </Col>
                 <Col sm={7}>
-                    
                 </Col>
             </Row>
         </Container>

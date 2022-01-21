@@ -8,24 +8,21 @@ function About() {
     return (
         <div>
             <Container fluid className='bg-1'>
-                
                 <Row className="justify-content-md-center">
                     <Col className="top" xs lg="6">
                         <div class='box'>
                             <img src={ethan} alt='done with mondays' className="pics" />
-                            <img src={solomon} alt='i never look like this' className="pics" />
                             <img src={dustin} alt='he is a badass and he knows it' className="pics" />
+                            <img src={solomon} alt='i never look like this' className="pics" />
                             <div class='title'>
                                 <h3>About Us</h3>
-                                
                             </div>
                             <p>A group of computer enthusiasts from Wyoming and
                                 Nebraska, Ethan, Dustin, and Solomon all enjoy
                                 discussing computers.
-                                <br/>
-                               
+                                <br />
                             </p>
-                            </div>
+                        </div>
                     </Col>
                 </Row>
             </Container>
