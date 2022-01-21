@@ -24,13 +24,14 @@ export const postTestData = () => async (dispatch) => {
 export const retrieveChats = () => async (dispatch) => {
     try {
         const {data} = await api.axios_getChat()
-        dispatch(redux_addChat(data))
+        dispatch(redux_getChat(data))
     } catch (error) {
         console.log(error)
     }
 }
 
 export const addChats = (data) => async (dispatch) => {
+    console.log(data);
     try {
         await api.axios_addChat(data)
         dispatch(redux_addChat(data))

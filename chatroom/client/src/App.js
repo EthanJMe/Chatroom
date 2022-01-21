@@ -24,7 +24,7 @@ import UserStats from './pages/UserStats.js'
 function App() {
   const dispatch = useDispatch()
   return (
-    <>
+    
       <div fluid className="bg-1">
 
         <div className="">
@@ -66,8 +66,7 @@ function App() {
         </div>
         <ParticleBackground></ParticleBackground>
       </div>
-    </>
-
+    
 
 
   );

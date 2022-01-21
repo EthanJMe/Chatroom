@@ -13,7 +13,7 @@ export const getChats = async (req, res) => {
 
 export const addChat = async (req, res) => {
     const chat = req.body;
-
+    console.log(chat);
     const newChatInfo = new Chats({ ...chat, createdAt: new Date().toISOString() })
 
     try {

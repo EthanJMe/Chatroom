@@ -1,61 +1,60 @@
 import { Col, Row, Container, Button, Form } from "react-bootstrap"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { addChats } from "../actions";
+import { addChats, retrieveChats } from "../actions";
 import socket from "../socket/Socket"
-import { selectChat } from "../state/chatSlice";
-import rooms from '../Rooms'
-const Input = document.getElementById('input');
+import { SelectChat } from "../state/chatSlice";
 
 function BaseChat() {
-    const dbmessage = useSelector(selectChat);
+    const messages = useSelector(SelectChat);
+    console.log(messages);
     const dispatch = useDispatch();
-    const [message, setMessage] = useState([]);
-    const [room, setRoom] = useState(rooms);
-    const [messageArray, setMessageArray] = useState(dbmessage)
-    const [response, setResponse] = useState({ message: '' })
+    const [message, setMessage] = useState();
+    const [room, setRoom] = useState("public");
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        setMessageArray([response, ...messageArray])
-        dispatch(addChats(messageArray))
-        socket.emit("usermessage", room, message);
-        Input.value = "";
+        console.log(message);
+        dispatch(addChats(message))
+        socket.emit("message", message);
     }
+
     const updateField = (e) => {
-        setResponse({
-            ...response,
+        setMessage({
             [e.target.name]: e.target.value
         })
-        setMessage(e.target.value);
+       
     }
+
+        useEffect (() => {
+            dispatch(retrieveChats()) //triggers the db call
+            }, [dispatch]);
+
     return (
         <>
             <Container fluid="true" className='center'>
                 <Container>
-                    <div className="box top">
-                        <h1>{`room: ${room[2].name}`}</h1>
-                        <Row xs={2} className="center">
-                            <Col className={`${room[2].name}MessageBox top`} >
-                                {messageArray.map((messageList, i) => {
-                                    return (
-                                        <div key={i} className="">
-                                            <h2>{messageList.message}</h2>
-                                        </div>
-                                    )
+                    <Row>
+                        <Col className='messageBox top' >
+                           {messages.map((messageList, i) => {
+                               console.log(messageList);
+                                return (
+                                    <div key={i} className="">
+                                        <h2>{messageList.message}</h2>
+                                    </div>
+                                )
                                 })}
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col className="top">
-                                <Form className="messageForm center" onSubmit={handleSubmit}>
-                                    <Form.Control id="input" type="text" placeholder="enter your message here" onChange={updateField} name="message"></Form.Control>
-                                    <button className="bg-0 unout miniMargin btn-outline-dark btn-lg" onClick={handleSubmit}>
-                                        Send
-                                    </button>
-                                </Form>
-                            </Col>
-                        </Row>
-                    </div>
+                        </Col>
+                    </Row>
+
+                    <Row>
+                        <Col className="top">
+                            <Form className="messageForm center" onSubmit={handleSubmit}>
+                                <Form.Control type="text" placeholder="enter your message here" onChange={updateField} name="message" />
+                                <Button onClick={handleSubmit}>Send</Button>
+                            </Form>
+                        </Col>
+                    </Row>
                 </Container>
             </Container>
         </>
