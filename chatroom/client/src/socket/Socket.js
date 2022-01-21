@@ -1,5 +1,8 @@
 import io from "socket.io-client";
+import {store} from "../state/store/store"
+import { redux_addChat } from "../state/chatSlice"
 const ENDPOINT = "http://localhost:5000"
+
 
 const socket = io(ENDPOINT);
 
@@ -12,8 +15,8 @@ socket.on('connect', () => {
 socket.on("greeting", greeting => console.log(greeting))
 
 socket.on("serverMessage", (data, id) => {
-    //dispatch(messageReducer(data))
-    console.log(`from ${id}: ${data}`)
+    store.dispatch(redux_addChat(data))
+    console.log(data)
   })
 
   socket.on("userLeft", (exit) => {
