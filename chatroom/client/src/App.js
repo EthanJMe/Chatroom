@@ -15,9 +15,9 @@ import { getTestData, postTestData } from './actions/index.js';
 import { useDispatch } from 'react-redux';
 import * as api from './api/index';
 import ParticleBackground from './pages/ParticleBackground'
+import chatContent from './content';
+import SignUp from './pages/SignUp';
 import EditUser from './pages/EditUserPage';
-import SignUp from './pages/SignUp.js';
-import UserStats from './pages/UserStats.js'
 
 
 
@@ -35,7 +35,7 @@ function App() {
           <BottomNavBar />
           <Switch>
           <Route exact path='/userStats'>
-              <UserStats />
+              <userStats/>
             </Route>
             <Route exact path='/SighUp'>
               <SignUp />
@@ -58,8 +58,8 @@ function App() {
             <Route exact path="/User">
               <LoginPage />
             </Route>
-            <Route exact path="/Rooms">
-              <BaseChat />
+            <Route path="/Rooms/:index">
+              <BaseChat chatContent = {chatContent}/>
             </Route>
           </Switch>
           <Footer />
