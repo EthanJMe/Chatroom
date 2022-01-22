@@ -8,7 +8,7 @@ const socket = io(ENDPOINT);
 
 // const socket = io(ENDPOINT);
 
-const socket = io()
+//const socket = io()
 socket.on('connect', () => {
   //console.log(`connected as ${socket.id}`)
   socket.emit("userJoin", "public")
