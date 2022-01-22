@@ -16,6 +16,7 @@ import { useDispatch } from 'react-redux';
 
 import * as api from './api/index';
 import ParticleBackground from './pages/ParticleBackground'
+import chatContent from './content';
 
 
 
@@ -50,8 +51,8 @@ function App() {
             <Route exact path="/User">
               <LoginPage />
             </Route>
-            <Route exact path="/Rooms">
-              <BaseChat />
+            <Route path="/Rooms/:index">
+              <BaseChat chatContent = {chatContent}/>
             </Route>
           </Switch>
           <Footer />

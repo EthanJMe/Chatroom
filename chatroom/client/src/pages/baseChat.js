@@ -1,16 +1,19 @@
-import { Col, Row, Container, Button, Form } from "react-bootstrap"
+import { Col, Row, Container, Button, Form, TabContent, Card, CardImg } from "react-bootstrap"
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { addChats, retrieveChats } from "../actions";
 import socket from "../socket/Socket"
 import { SelectChat } from "../state/chatSlice";
+import chatContent from '../content.js'
+import { useParams } from "react-router-dom";
 
-function BaseChat() {
+function BaseChat(props) {
     const messages = useSelector(SelectChat);
     console.log(messages);
     const dispatch = useDispatch();
     const [message, setMessage] = useState();
     const [room, setRoom] = useState("public");
+    const { index } = useParams();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -33,7 +36,12 @@ function BaseChat() {
     return (
         <>
             <Container fluid className=''>
+                
                 <Container>
+                    <Card>
+                        <Card.Body>
+                        <Card.Title>{chatContent[index].title}</Card.Title>
+                        <CardImg src={chatContent[index].img} />
                     <Row>
                         <Col className='messageBox top' >
                            {messages.map((messageList, i) => {
@@ -42,8 +50,8 @@ function BaseChat() {
                                     <div key={i} className="">
                                         <h2>{messageList.message}</h2>
                                     </div>
-                                )
-                                })}
+                                
+                           )})}
                         </Col>
                     </Row>
 
@@ -55,7 +63,10 @@ function BaseChat() {
                             </Form>
                         </Col>
                     </Row>
+                    </Card.Body>
+                    </Card>
                 </Container>
+
             </Container>
         </>
     )

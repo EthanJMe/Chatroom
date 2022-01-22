@@ -4,12 +4,16 @@ import avatar from '../assets/placeholder.png'
 import { useState } from "react";
 import AccountModal from '../AccountModal'
 const Username = 'username'
+const FavColor = 'favcolor'
 
 
 function UserPage() {
     const [show, setShow] = useState(false); //sets show to false, which keeps the Modal from loading
     const handleShow = () => setShow(true); //function to change show to true and load Modal
     const handleClose = () => setShow(false);
+
+
+    
     return (
         <div>
         <Container fluid className='bg-1'>
@@ -21,6 +25,8 @@ function UserPage() {
                            <Form.Text className='miniMargin'><h3>{Username}</h3></Form.Text>
                            <Form.Label className='miniMargin'><h3>Password</h3></Form.Label>
                            <Form.Control className='miniMargin' type="Password" placeholder="Password" />
+                           <Form.Text className='miniMargin'><h3>{FavColor}</h3></Form.Text>
+                           <Form.Control className='miniMargin' type="Color" placeholder="Favorite Color" />
                            <Button onClick={(e) => {
                            e.preventDefault();
                            handleShow()
