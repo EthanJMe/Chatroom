@@ -31,15 +31,14 @@ io.on('connection', (socket) => {
   socket.on("message", (data) => {
     //broadcast from the original sender socket
     socket.broadcast.emit("serverMessage", data, socket.id);
-
   });
 
-  socket.on("usermessage", (room, data) => {
-    socket.leave("public")
-    socket.join(room);
-    console.log(data);
-    socket.to(room).emit("serverMessage", data); 
-  })
+  // socket.on("usermessage", (room, data) => {
+  //   socket.leave("public")
+  //   socket.join(room);
+  //   console.log(data);
+  //   socket.to(room).emit("serverMessage", data); 
+  // })
 
   
 

@@ -7,7 +7,7 @@ import { SelectChat } from "../state/chatSlice";
 
 function BaseChat() {
     const messages = useSelector(SelectChat);
-    console.log(messages);
+    // console.log(messages);
     const dispatch = useDispatch();
     const [message, setMessage] = useState();
     const [room, setRoom] = useState("public");
@@ -37,7 +37,7 @@ function BaseChat() {
                     <Row>
                         <Col className='messageBox top' >
                            {messages.map((messageList, i) => {
-                               console.log(messageList);
+                            //    console.log(messageList);
                                 return (
                                     <div key={i} className="">
                                         <h2>{messageList.message}</h2>
