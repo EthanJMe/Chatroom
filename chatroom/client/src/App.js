@@ -13,10 +13,11 @@ import LoginPage from './pages/LoginPage';
 import { Col, Row, Container, Button, Form } from "react-bootstrap"
 import { getTestData, postTestData } from './actions/index.js';
 import { useDispatch } from 'react-redux';
-
 import * as api from './api/index';
 import ParticleBackground from './pages/ParticleBackground'
 import chatContent from './content';
+import SignUp from './pages/SignUp';
+import EditUser from './pages/EditUserPage';
 
 
 
@@ -25,22 +26,28 @@ function App() {
   return (
     
       <div fluid className="bg-1">
-        <ParticleBackground></ParticleBackground>
+
         <div className="">
           <TopNavBar />
           <button onClick={() => api.testGet()}>Test Get</button>
           <button onClick={() => api.testPost()}>Test Post</button>
-          <button><Link className="space" to="/profile">Profile</Link></button>
+          <button><Link className="space" to="/Profile">Profile</Link></button>
           <BottomNavBar />
           <Switch>
-            <Route exact path='/profile'>
+          <Route exact path='/userStats'>
+              <userStats/>
+            </Route>
+            <Route exact path='/SighUp'>
+              <SignUp />
+            </Route>
+            <Route exact path='/EditUser'>
+              <EditUser />
+            </Route>
+            <Route exact path='/Profile'>
               <UserPage />
             </Route>
             <Route exact path='/'>
               <Home />
-            </Route>
-            <Route exact path='/Chat'>
-              <baseChat />
             </Route>
             <Route exact path='/About'>
               <About />
@@ -57,6 +64,7 @@ function App() {
           </Switch>
           <Footer />
         </div>
+        <ParticleBackground></ParticleBackground>
       </div>
     
 

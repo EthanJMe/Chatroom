@@ -4,7 +4,7 @@
 }
 html {
   background-color: #305265;
-  z-index: -2;
+  z-index: -3;
 }
 a:hover{
   color: #000000 ;
@@ -26,7 +26,7 @@ a:hover{
 /* Navs */
 
 .header{
-  background-color: black;
+  background-color: #212529;
 }
 .topNav{
   background-color: #44E0D4;
@@ -52,6 +52,8 @@ a:hover{
   text-align: center;
 }
 .round {
+  margin-right: auto;
+  margin-left: auto;
   border-radius: 10px;
 }
 .unButton{
@@ -68,6 +70,13 @@ a:hover{
 .bg-1{
   background-color: #305265;
 }
+.bg-0 {
+  margin-top: -5px;
+  background-color: #ffffff00;
+}
+.unout {
+  border: none;
+}
 .bg-black{
   background-color: #be196c;
 }
@@ -83,6 +92,15 @@ a:hover{
   border-radius: 40px;
   text-align: center;
   margin-bottom: 100px;
+}
+.contactTitle {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #44E0D4;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .title {
   border-radius: 10px;
@@ -107,13 +125,47 @@ p {
 display: inline-block;
 }
 .messageBox {
-  margin-top: 500px;
+  border: 2px solid #dee2e6;
+  margin: auto;
   border-radius: 10px;
-  background-color: azure;
+  background-color: rgb(255, 255, 255);
   flex-direction: column-reverse;
   display: flex;
   overflow: scroll;
-  height: 600px;
+  height: 500px;
+  text-align: right;
+}
+.publicMessageBox {
+  border: 2px solid #dee2e6;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgb(160, 123, 123);
+  flex-direction: column-reverse;
+  display: flex;
+  overflow: scroll;
+  height: 500px;
+  text-align: right;
+}
+.room1MessageBox {
+  border: 2px solid #dee2e6;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgb(200, 77, 77);
+  flex-direction: column-reverse;
+  display: flex;
+  overflow: scroll;
+  height: 500px;
+  text-align: right;
+}
+.room2MessageBox {
+  border: 2px solid #dee2e6;
+  margin: auto;
+  border-radius: 10px;
+  background-color: rgb(38, 194, 116);
+  flex-direction: column-reverse;
+  display: flex;
+  overflow: scroll;
+  height: 500px;
   text-align: right;
 }
 .messageForm {
@@ -130,7 +182,7 @@ display: inline-block;
   margin-top: -50px
 }
 .carouselBorder {
-  background-color: black;
+  background-color: #212529;
 }
 .particle-background{
   z-index: 0;
@@ -139,9 +191,18 @@ display: inline-block;
   margin-top: -1290px;
 }
 .top {
-  z-index: 1;
+  z-index: 3;
 }
 .avatar {
   border-radius: 50%;
   width: 100%;
+}
+.chatCover {
+  
+}
+.usersJoined {
+  text-align: center;
+  background-color: white;
+  border: 2px solid #dee2e6;
+  border-radius: 10px;
 }

@@ -9,7 +9,6 @@ function GamesCarousel({content}) {
       <Carousel fade>
         {content.map((item, index) => {
           return (
-            
               <Carousel.Item>
                 <img
                   className="d-block w-100"
@@ -21,8 +20,6 @@ function GamesCarousel({content}) {
                   <p>{item.carouselCaption}</p>
                 </Carousel.Caption>
               </Carousel.Item>
-            
-            
           )
         })}
       </Carousel>

@@ -22,7 +22,6 @@ function HardwareCarousel({content}) {
                   <p>{item.carouselCaption}</p>
                 </Carousel.Caption>
               </Carousel.Item>
-            
           )
         })}
       </Carousel>

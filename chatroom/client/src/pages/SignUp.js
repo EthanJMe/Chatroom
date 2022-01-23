@@ -1,9 +1,15 @@
 import React from 'react'
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
+import avatar from '../assets/placeholder.png'
+import { useState } from "react";
 import { Link } from 'react-router-dom';
+const Username = 'Username'
 
 
-function LoginPage() {
+function SignUp() {
+    const [show, setShow] = useState(false); //sets show to false, which keeps the Modal from loading
+    const handleShow = () => setShow(true); //function to change show to true and load Modal
+    const handleClose = () => setShow(false);
     return (
         <div>
             <Container fluid className='bg-1'>
@@ -11,24 +17,23 @@ function LoginPage() {
                     <Col className="top" xs lg="4">
                         <div class='box'>
                             <Form className=" miniMargin">
-                                <Form.Label className='miniMargin'><h3>Username</h3></Form.Label>
+                                <Form.Label className='miniMargin w-50'>
+                                    <img className='avatar' src={avatar} alt='' />
+                                    <input type="file" onChange />
+                                </Form.Label>
+                                <br />
+                                <Form.Control className='center miniMargin w-75' type="Email" placeholder='Email' />
                                 <Form.Control className='center miniMargin w-75' type="Username" placeholder='Username' />
-                                <Form.Label className='miniMargin'><h3>Password</h3></Form.Label>
-                                <Form.Control className='center miniMargin w-75' type="Password" placeholder="Password" />
+                                <Form.Control className='center space w-75' type="Password" placeholder="Password" />
                             </Form>
                             <Row className=" miniMargin justify-content-md-center">
-                                <Col xs lg="6">
-                                    <button className="bg-0 unout btn-outline-dark btn-lg">
-                                        Login
-                                    </button>
-                                </Col>
                                 <Col xs lg="6">
                                     <Link
                                         className=" btn-outline-dark btn-lg"
                                         role="button"
                                         to="/SighUp"
                                     >
-                                        Register
+                                        Sign Up
                                     </Link>
                                 </Col>
                             </Row>
@@ -36,10 +41,9 @@ function LoginPage() {
                         </div>
                     </Col>
                 </Row>
-
             </Container>
         </div>
     )
 }
 
-export default LoginPage
+export default SignUp
