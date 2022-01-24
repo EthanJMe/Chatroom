@@ -5,10 +5,10 @@ const userSchema = mongoose.Schema({
     password: String,
     // favoriteRoom: String,
     favoriteColor: String,
-    avatar: {
-        data: Buffer,
-        contentType: String
-    },
+    // avatar: {
+    //     data: Buffer,
+    //     contentType: String
+    // },
     // createdAt: {
     //     type: Date,
     //     default: new Date(),

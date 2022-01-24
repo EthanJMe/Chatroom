@@ -7,6 +7,7 @@ import { redux_addUsers } from '../state/userSlice';
 import { addUsers, getUsers } from '../actions';
 import AccountModal from '../AccountModal'
 import { Link } from 'react-router-dom';
+import socket from '../socket/Socket';
 
 
 
@@ -15,28 +16,23 @@ function UserPage() {
     const handleShow = () => setShow(true); //function to change show to true and load Modal
     const handleClose = () => setShow(false);
     const dispatch = useDispatch();
-    const content = useSelector(addUsers);
+    const userContent = useSelector(addUsers);
 
     //user db
     const [response, setResponse] = useState()
+    
+    const handleSubmit = (e) => {
+        // e.preventDefault();
+        console.log(response)
+        dispatch(addUsers(response));
+        socket.emit("response", response)
+    }
     const updateField = (e) => {
         setResponse({
             ...response,
             [e.target.name]: e.target.value
         })
     }
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        handleClose();
-        const updateContentArr = [
-            ...content, response
-        ];
-        if (response.userSchema) {
-            dispatch(addUsers(updateContentArr))
-            setResponse({})
-        }
-    }
-
     useEffect(() => {
         dispatch(getUsers()) //triggers the db call
     }, [dispatch]);
@@ -51,11 +47,11 @@ function UserPage() {
       
                             <Form onSubmit={handleSubmit}>
                                 <Form.Label className='miniMargin' onChange={updateField} name="avatar"><img className='avatar' src={avatar} alt='' /></Form.Label>
-                                <Form.Text className='miniMargin'><h3>{Username}</h3></Form.Text>
+                                <Form.Text className='miniMargin'><h3>Username</h3></Form.Text>
                                 <Form.Control className='miniMargin' type="Username" placeholder="Password" name="userName" onChange={updateField}/>
                                 <Form.Label className='miniMargin'><h3>Password</h3></Form.Label>
                                 <Form.Control className='miniMargin' type="Password" placeholder="Password" name="password" onChange={updateField}/>
-                                <Form.Text className='miniMargin'><h3>{FavColor}</h3></Form.Text>
+                                <Form.Text className='miniMargin'><h3>FavColor</h3></Form.Text>
                                 <Form.Control className='miniMargin' type="Color" placeholder="Favorite Color" name="favoriteColor" onChange={updateField}/>
                                 <Button onClick={(e) => {
                                     

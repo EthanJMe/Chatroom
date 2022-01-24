@@ -11,7 +11,7 @@ import battlefield from './assets/battlefield.jpg';
 let chatContent = [
     {
         title: "Nvidia Graphics",
-        img: nvidia
+        img: nvidia,
     },
     {
         title: "Razr Hardware",

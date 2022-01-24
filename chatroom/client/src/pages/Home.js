@@ -18,7 +18,7 @@ function Home() {
                 <Col sm={7} className="top">
                     <div className="gradShadow top">
                     <br/>
-                        <h2>Hello<br/> this is Chatware, a gamer's chat-room<br/>explore our chats through the ROOMS tab<br/>and send us a message through the CONTACT US tab</h2>
+                        <h2>Hello<br/> this is ChatWare, a gamers ChatRoom<br/>explore our chats through the ROOMS tab<br/>and send us a message through the CONTACT US tab</h2>
                         <br/>
                     </div>
                 </Col>
