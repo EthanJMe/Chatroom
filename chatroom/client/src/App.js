@@ -10,10 +10,6 @@ import BottomNavBar from './navbars/BottomNavBar';
 import Footer from './navbars/footer';
 import ContactUsBody from './pages/Contact';
 import LoginPage from './pages/LoginPage';
-import { Col, Row, Container, Button, Form } from "react-bootstrap"
-import { getTestData, postTestData } from './actions/index.js';
-import { useDispatch } from 'react-redux';
-import * as api from './api/index';
 import ParticleBackground from './pages/ParticleBackground'
 import chatContent from './content';
 import SignUp from './pages/SignUp';
@@ -23,17 +19,13 @@ import ChatList from './pages/ChatList';
 
 
 function App() {
-  const dispatch = useDispatch()
   return (
     
       <div fluid className="bg-1">
 
         <div className="">
           <TopNavBar />
-          <button onClick={() => api.testGet()}>Test Get</button>
-          <button onClick={() => api.testPost()}>Test Post</button>
-          <button><Link className="space" to="/Profile">Profile</Link></button>
-          <BottomNavBar/>
+          <BottomNavBar />
           <Switch>
           <Route exact path='/userStats'>
               <userStats/>
