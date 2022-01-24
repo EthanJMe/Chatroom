@@ -54,7 +54,7 @@ function UserPage() {
                                 <Form.Label className='miniMargin'><h3>Password</h3></Form.Label>
                                 <Form.Control className='miniMargin' type="Password" placeholder="Password" name="password" onChange={updateField}/>
                                 <Form.Text className='miniMargin'><h3>{FavColor}</h3></Form.Text>
-                                <Form.Control className='miniMargin' type="Color" placeholder="Favorite Color" naem="favoriteColor" onChange={updateField}/>
+                                <Form.Control className='miniMargin' type="Color" placeholder="Favorite Color" name="favoriteColor" onChange={updateField}/>
                                 <Button onClick={(e) => {
                                     
                                     e.preventDefault();
