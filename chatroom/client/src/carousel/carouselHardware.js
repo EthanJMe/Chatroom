@@ -10,17 +10,17 @@ function HardwareCarousel({content}) {
         {content.map((item, index) => {
           return (
               <Carousel.Item>
-                <Link>
+                <Link to = {`/Rooms/${index}`}>
                 <img
                   className="d-block w-100"
                   src={item.carouselImg}
                   alt="First slide"
                 />
-                </Link>
                 <Carousel.Caption>
                   <h3>{item.carouselTitle}</h3>
                   <p>{item.carouselCaption}</p>
                 </Carousel.Caption>
+                </Link>
               </Carousel.Item>
           )
         })}

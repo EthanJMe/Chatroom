@@ -19,7 +19,7 @@ function LoginPage() {
                             <Row className=" miniMargin justify-content-md-center">
                                 <Col xs lg="6">
                                     <button className="bg-0 unout btn-outline-dark btn-lg">
-                                        Login
+                                    <Link className="space" to="/Profile">Login</Link>
                                     </button>
                                 </Col>
                                 <Col xs lg="6">
