@@ -6,6 +6,7 @@ import socket from "../socket/Socket"
 import { SelectChat } from "../state/chatSlice";
 import chatContent from '../content.js'
 import { useParams } from "react-router-dom";
+import avatar from '../assets/placeholder.png'
 
 function BaseChat(props) {
     const messages = useSelector(SelectChat);
@@ -39,62 +40,81 @@ function BaseChat(props) {
                 <Container className="box top ">
                     <Row className="miniMargin">
                         <div><br /></div>
-                        <Col xs={8} className="contactTitle top">
+                        <Col xs={8} className="w-25 contactTitle top">
                             <Card>
                                 <Card.Body>
                                     <Card.Title>{chatContent[index].title}</Card.Title>
                                     <CardImg src={chatContent[index].img} />
                                 </Card.Body>
                             </Card>
-                            </Col>
-                            </Row>
-                            
-                            <Row className="miniMargin top ">
-                                <Col xs={3} className="top">
-                                    <div className="usersJoined">
-                                        <h2 >Avatar:User</h2>
-                                        <h2 >Avatar:User</h2>
-                                        <h2 >Avatar:User</h2>
-                                        <h2 >Avatar:User</h2>
-                                        <h2 >Avatar:User</h2>
-                                        <h2 >Avatar:User</h2>
-                                        <h2 >Avatar:User</h2>
-                                        <h2 >Avatar:User</h2>
+                        </Col>
+                    </Row>
 
-                                    </div>
-                                </Col>
-                                <Col xs={8}  >
-                                    <Row>
-                                        <Col className='messageBox top'>
-                                            <div className="chatCover"></div>
-                                            {messages.map((messageList, i) => {
-                                                console.log(messageList);
-                                                return (
-                                                    <div key={i} className="">
-                                                        <h2>{messageList.message}</h2>
-                                                    </div>
-                                                )
-                                            })}
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col className="miniMargin top">
-                                            <Form className="messageForm " onSubmit={handleSubmit}>
-                                                <Form.Control type="text" placeholder="enter your message here" onChange={updateField} name="message" />
-                                                <button className="bg-0 unout miniMargin btn-outline-dark btn-lg" onClick={handleSubmit}>
-                                                    Send
-                                                </button>
-                                            </Form>
-                                        </Col>
-                                    </Row>
+                    <Row className="miniMargin top ">
+                        <Col xs={3} className="top">
+                            <div className="usersJoined">
+                                <br/>
+                                <Row className="miniMargin">
+                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <div className="w-25"><h2>User</h2></div>
+                                </Row>
+                                <Row className="miniMargin">
+                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <div className="w-25"><h2>User</h2></div>
+                                </Row>
+                                <Row className="miniMargin">
+                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <div className="w-25"><h2>User</h2></div>
+                                </Row>
+                                <Row className="miniMargin">
+                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <div className="w-25"><h2>User</h2></div>
+                                </Row>
+                                <Row className="miniMargin">
+                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <div className="w-25"><h2>User</h2></div>
+                                </Row>
+                                <Row className="miniMargin">
+                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <div className="w-25"><h2>User</h2></div>
+                                </Row>
+                                <Row className="miniMargin">
+                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <div className="w-25"><h2>User</h2></div>
+                                </Row>
+                            </div>
+                        </Col>
+                        <Col xs={8}  >
+                            <Row>
+                                <Col className='messageBox top'>
+                                    {messages.map((messageList, i) => {
+                                        console.log(messageList);
+                                        return (
+                                            <div key={i} className="messageSpacer">
+                                                <h2 ><span className="message top"> {messageList.message}</span></h2>
+                                            </div>
+                                        )
+                                    })}
                                 </Col>
                             </Row>
-
-                        </Container>
+                            <Row>
+                                <Col className="miniMargin top">
+                                    <Form className="messageForm " onSubmit={handleSubmit}>
+                                        <Form.Control type="text" placeholder="enter your message here" onChange={updateField} name="message" />
+                                        <button className="bg-0 unout miniMargin btn-outline-dark btn-lg" onClick={handleSubmit}>
+                                            Send
+                                        </button>
+                                    </Form>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
 
                 </Container>
-            </>
-            )
+
+            </Container>
+        </>
+    )
 }
 
-            export default BaseChat
+export default BaseChat

@@ -3,8 +3,9 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import avatar from '../assets/placeholder.png'
 import { useState } from "react";
 import AccountModal from '../AccountModal'
-const Username = 'username'
-const FavColor = 'favcolor'
+import { Link } from 'react-router-dom';
+
+
 
 function UserPage() {
     const [show, setShow] = useState(false); //sets show to false, which keeps the Modal from loading
@@ -19,19 +20,22 @@ function UserPage() {
                     <Col className="top" xs lg="6">
                         <div class='box'>
                             <Form>
-                                <Form.Label className='miniMargin'><img className='avatar' src={avatar} alt='' /></Form.Label>
-                                <Form.Text className='miniMargin'><h3>{Username}</h3></Form.Text>
-                                <Form.Label className='miniMargin'><h3>Password</h3></Form.Label>
-                                <Form.Control className='miniMargin' type="Password" placeholder="Password" />
-                                <Form.Text className='miniMargin'><h3>{FavColor}</h3></Form.Text>
-                                <Form.Control className='miniMargin' type="Color" placeholder="Favorite Color" />
-                                <Button onClick={(e) => {
-
-                                    e.preventDefault();
-                                    handleShow()
-                                }}>Submit here</Button>
+                                <Form.Label className='miniMargin'><img className='avatar' src={avatar} alt='' /></Form.Label><br/>
+                                <Form.Label className='miniMargin'><h3>Username</h3></Form.Label><br/>
+                                <Form.Label className='miniMargin'><h3>Password</h3></Form.Label><br/>
+                                <Form.Label className='miniMargin'><h3>Favorite Color</h3></Form.Label>
                             </Form>
-                            <AccountModal setShow={setShow} show={show} handleClose={handleClose} />
+                            <div className="userColor miniMargin space">
+
+                            </div>
+                            <Link
+                                        className=" btn-outline-dark btn-lg"
+                                        role="button"
+                                        to="/EditUser"
+                                    >
+                                        Edit Profile
+                                    </Link>
+                                <div><br/></div>
                         </div>
                     </Col>
                 </Row>

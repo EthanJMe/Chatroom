@@ -13,9 +13,6 @@ const ParticleBackground = () => {
           "repeat": "no-repeat",
           "size": "cover"
         },
-        "fullScreen": {
-          "zIndex": 0
-        },
         "detectRetina": false,
         "fpsLimit": 30,
         "interactivity": {
@@ -109,29 +106,6 @@ const ParticleBackground = () => {
             }
           }
         },
-        // "polygon": {
-        //   "draw": {
-        //     "enable": true,
-        //     "stroke": {
-        //       "color": {
-        //         "value": "rgba(255,255,255,0.2)"
-        //       },
-        //       "width": 0.5,
-        //       "opacity": 0.2
-        //     }
-        //   },
-        //   "enable": true,
-        //   "inline": {
-        //     "arrangement": "equidistant"
-        //   },
-        //   "move": {
-        //     "radius": 10,
-        //     "type": "path"
-        //   },
-        //   "scale": 0.5,
-        //   "type": "inline",
-
-        // }
       }}
     />
   </div>
