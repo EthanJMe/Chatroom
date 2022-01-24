@@ -6,8 +6,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { redux_addUsers } from '../state/userSlice';
 import { addUsers, getUsers } from '../actions';
 import AccountModal from '../AccountModal'
-const Username = 'username'
-const FavColor = 'favcolor'
+import { Link } from 'react-router-dom';
+
+
 
 function UserPage() {
     const [show, setShow] = useState(false); //sets show to false, which keeps the Modal from loading
@@ -47,6 +48,7 @@ function UserPage() {
                 <Row className="justify-content-md-center">
                     <Col className="top" xs lg="6">
                         <div class='box'>
+      
                             <Form onSubmit={handleSubmit}>
                                 <Form.Label className='miniMargin' onChange={updateField} name="avatar"><img className='avatar' src={avatar} alt='' /></Form.Label>
                                 <Form.Text className='miniMargin'><h3>{Username}</h3></Form.Text>
@@ -62,7 +64,17 @@ function UserPage() {
                                     handleShow()
                                 }}>Submit here</Button>
                             </Form>
-                            <AccountModal setShow={setShow} show={show} handleClose={handleClose} />
+                            <div className="userColor miniMargin space">
+
+                            </div>
+                            <Link
+                                        className=" btn-outline-dark btn-lg"
+                                        role="button"
+                                        to="/EditUser"
+                                    >
+                                        Edit Profile
+                                    </Link>
+                                <div><br/></div>
                         </div>
                     </Col>
                 </Row>

@@ -12,7 +12,15 @@ function Home() {
                     <CarouselStack />
                     {/* <img src={carouselContentGames[0].carouselImg}/> */}
                 </Col>
-                <Col sm={7}>
+                <Col sm={1}>
+
+                </Col>
+                <Col sm={7} className="top">
+                    <div className="gradShadow top">
+                    <br/>
+                        <h2>Hello<br/> this is Chatware, a gamer's chat-room<br/>explore our chats through the ROOMS tab<br/>and send us a message through the CONTACT US tab</h2>
+                        <br/>
+                    </div>
                 </Col>
             </Row>
         </Container>

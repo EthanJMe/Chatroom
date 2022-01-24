@@ -44,7 +44,10 @@ let chatContent = [
     {
         title: "Battlefield 2042",
         img: battlefield
-    }
+    },
+    
+    
+    
 ]
 
 export default chatContent
