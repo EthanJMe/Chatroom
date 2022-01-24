@@ -27,12 +27,14 @@ function UserPage() {
         dispatch(addUsers(response));
         socket.emit("response", response)
     }
+    
     const updateField = (e) => {
         setResponse({
             ...response,
             [e.target.name]: e.target.value
         })
     }
+
     useEffect(() => {
         dispatch(getUsers()) //triggers the db call
     }, [dispatch]);

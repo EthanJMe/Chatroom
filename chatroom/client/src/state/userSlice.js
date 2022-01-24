@@ -4,12 +4,12 @@ import { createSlice } from '@reduxjs/toolkit';
 export const userSlice = createSlice({
     name: 'userSlice',
     initialState: {
-        content: { userData: null }
+        content: [],
     },
     reducers: {
         redux_addUsers: (state, action) => {
-            console.log(action.payload)
             state.content.push(action.payload)
+            console.log(action.payload);
         },
         redux_getUsers: (state, action) => {
             state.content = action.payload;
