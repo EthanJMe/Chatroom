@@ -6,7 +6,7 @@ const ENDPOINT = "http://localhost:5000"
 
 // const socket = io(ENDPOINT);
 
-// const socket = io(ENDPOINT);
+const socket = io(ENDPOINT);
 
 //const socket = io()
 socket.on('connect', () => {
@@ -17,7 +17,7 @@ socket.on('connect', () => {
 socket.on("greeting", greeting => console.log(greeting))
 
 socket.on("serverMessage", (data, id) => {
-    store.dispatch(redux_addChat(data))
+    store.dispatch(redux_addChat(data,))
     console.log(data)
   })
 

@@ -14,6 +14,7 @@ function BaseChat(props) {
     const [message, setMessage] = useState();
     const [room, setRoom] = useState("public");
     const { index } = useParams();
+    let bg = "white"
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,6 +33,11 @@ function BaseChat(props) {
     useEffect(() => {
         dispatch(retrieveChats()) //triggers the db call
     }, [dispatch]);
+
+    const bgColor = (e) => {
+        e.preventDefault();
+        bg = document.getElementById('colorInput').value
+    }
 
     return (
         <>
@@ -65,7 +71,7 @@ function BaseChat(props) {
                                 </Col>
                                 <Col xs={8}  >
                                     <Row>
-                                        <Col className='messageBox top'>
+                                        <Col className='messageBox top' style={{backgroundColor: `${bg}`}}>
                                             <div className="chatCover"></div>
                                             {messages.map((messageList, i) => {
                                                 console.log(messageList);
@@ -77,11 +83,12 @@ function BaseChat(props) {
                                             })}
                                         </Col>
                                     </Row>
+                                    
                                     <Row>
                                         <Col className="miniMargin top">
                                             <Form className="messageForm " onSubmit={handleSubmit}>
                                                 <Form.Control type="text" placeholder="enter your message here" onChange={updateField} name="message" />
-                                                <button className="bg-0 unout miniMargin btn-outline-dark btn-lg" onClick={handleSubmit}>
+                                                <button className="bg-0 unout miniMargin btn-outline-dark btn-lg">
                                                     Send
                                                 </button>
                                             </Form>
@@ -89,7 +96,6 @@ function BaseChat(props) {
                                     </Row>
                                 </Col>
                             </Row>
-
                         </Container>
 
                 </Container>

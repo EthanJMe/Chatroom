@@ -29,9 +29,6 @@ function App() {
 
         <div className="">
           <TopNavBar />
-          <button onClick={() => api.testGet()}>Test Get</button>
-          <button onClick={() => api.testPost()}>Test Post</button>
-          <button><Link className="space" to="/Profile">Profile</Link></button>
           <BottomNavBar />
           <Switch>
           <Route exact path='/userStats'>
