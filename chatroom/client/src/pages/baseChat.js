@@ -59,33 +59,33 @@ function BaseChat(props) {
                     <Row className="miniMargin top ">
                         <Col xs={3} className="top">
                             <div className="usersJoined">
-                                <br/>
+                                <br />
                                 <Row className="miniMargin">
-                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <img className="avatar w-25" src={avatar} alt='' />
                                     <div className="w-25"><h2>User</h2></div>
                                 </Row>
                                 <Row className="miniMargin">
-                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <img className="avatar w-25" src={avatar} alt='' />
                                     <div className="w-25"><h2>User</h2></div>
                                 </Row>
                                 <Row className="miniMargin">
-                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <img className="avatar w-25" src={avatar} alt='' />
                                     <div className="w-25"><h2>User</h2></div>
                                 </Row>
                                 <Row className="miniMargin">
-                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <img className="avatar w-25" src={avatar} alt='' />
                                     <div className="w-25"><h2>User</h2></div>
                                 </Row>
                                 <Row className="miniMargin">
-                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <img className="avatar w-25" src={avatar} alt='' />
                                     <div className="w-25"><h2>User</h2></div>
                                 </Row>
                                 <Row className="miniMargin">
-                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <img className="avatar w-25" src={avatar} alt='' />
                                     <div className="w-25"><h2>User</h2></div>
                                 </Row>
                                 <Row className="miniMargin">
-                                     <img className="avatar w-25" src={avatar} alt = ''/>
+                                    <img className="avatar w-25" src={avatar} alt='' />
                                     <div className="w-25"><h2>User</h2></div>
                                 </Row>
                             </div>
@@ -103,7 +103,9 @@ function BaseChat(props) {
                                     })}
                                 </Col>
 
-
+                            </Row>
+                        </Col>
+                    </Row>
                 </Container>
 
             </Container>

@@ -8,10 +8,12 @@ import { addUsers, getUsers } from '../actions';
 import AccountModal from '../AccountModal'
 import { Link } from 'react-router-dom';
 import socket from '../socket/Socket';
+import SelectUsers from '../state/userSlice'
 
 
 
 function UserPage() {
+    const users = useSelector(SelectUsers);
     const [show, setShow] = useState(false); //sets show to false, which keeps the Modal from loading
     const handleShow = () => setShow(true); //function to change show to true and load Modal
     const handleClose = () => setShow(false);
@@ -27,7 +29,7 @@ function UserPage() {
         dispatch(addUsers(response));
         socket.emit("response", response)
     }
-    
+
     const updateField = (e) => {
         setResponse({
             ...response,

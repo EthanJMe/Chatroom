@@ -18,4 +18,5 @@ export const userSlice = createSlice({
 })
 
 export const { redux_addUsers, redux_getUsers } = userSlice.actions;
+export const SelectUsers = (state) => state.users.content
 export default userSlice.reducer;
