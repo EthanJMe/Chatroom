@@ -5,6 +5,7 @@ import { useState, Component } from "react";
 import AccountModal from '../AccountModal'
 const Username = 'Username';
 const Password = 'Password'
+const FavColor = 'favcolor'
 
 
 function EditUser() {
@@ -25,6 +26,8 @@ function EditUser() {
                                 <Form.Control className='center space w-75' type="Username" placeholder="Username" />
                                 <Form.Label className='miniMargin'><h3>{Password}</h3></Form.Label>
                                 <Form.Control className='center space w-75' type="Password" placeholder="Password" />
+                                <Form.Label className='miniMargin'><h3>{FavColor}</h3></Form.Label>
+                                <Form.Control className='miniMargin w-25' type="Color" placeholder="Favorite Color" />
                                 <button className="bg-0 unout miniMargin btn-outline-dark btn-lg" onClick={(e) => {
                                     e.preventDefault();
                                     handleShow()

@@ -22,7 +22,9 @@ a:hover{
   background-color: beige;
   margin-right: 40px;
 }
-
+Container {
+  z-index: -3;
+}
 /* Navs */
 
 .header{
@@ -31,11 +33,15 @@ a:hover{
 .topNav{
   background-color: #44E0D4;
   margin-bottom: 50px;
-  height: 30px;
+  height: 40px;
+  font-family: 'Nunito Sans'
 }
 .bottomNav{
   background-color: #44E0D4;
   height: 30px;
+}
+.navLink {
+  max-height: 30px;
 }
 .space{
   margin-left: auto;
@@ -69,6 +75,7 @@ a:hover{
 }
 .bg-1{
   background-color: #305265;
+  z-index: -5;
 }
 .bg-0 {
   margin-top: -5px;
@@ -134,12 +141,18 @@ display: inline-block;
   overflow: scroll;
   height: 500px;
   text-align: right;
+  overflow-x: hidden;
+}
+.message {
+  padding: 3px;
+  border-radius: 10px;
+  background-color: #44E0D4;
 }
 .publicMessageBox {
   border: 2px solid #dee2e6;
   margin: auto;
   border-radius: 10px;
-  background-color: rgb(160, 123, 123);
+  background-color: rgb(0, 0, 0);
   flex-direction: column-reverse;
   display: flex;
   overflow: scroll;
@@ -179,12 +192,16 @@ display: inline-block;
   display: none;
 }
 .carouselStack {
-  margin-top: -50px
+  margin-top: -50px;
+  z-index: -3;
 }
 .carouselBorder {
   background-color: #212529;
+  z-index: -3;
 }
 .particle-background{
+  position: fixed;
+  width: 100%;
   z-index: 0;
 }
 .appAlign{
@@ -192,17 +209,34 @@ display: inline-block;
 }
 .top {
   z-index: 3;
+  Position: static
+}
+.top2 {
+  z-index: 4;
+  Position: static
 }
 .avatar {
   border-radius: 50%;
   width: 100%;
-}
-.chatCover {
-  
 }
 .usersJoined {
   text-align: center;
   background-color: white;
   border: 2px solid #dee2e6;
   border-radius: 10px;
+}
+.messageSpacer {
+  margin-bottom: 10px;
+}
+.gradShadow {
+  background-image: linear-gradient(#212529, #2125292f);
+  margin-top: 50px;
+  color: azure;
+  text-align: center;
+}
+.userColor {
+  background-color: #be196c;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
 }

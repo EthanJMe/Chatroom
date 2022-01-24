@@ -11,7 +11,7 @@ import battlefield from './assets/battlefield.jpg';
 let chatContent = [
     {
         title: "Nvidia Graphics",
-        img: nvidia
+        img: nvidia,
     },
     {
         title: "Razr Hardware",
@@ -44,7 +44,10 @@ let chatContent = [
     {
         title: "Battlefield 2042",
         img: battlefield
-    }
+    },
+    
+    
+    
 ]
 
 export default chatContent

@@ -14,6 +14,7 @@ import ParticleBackground from './pages/ParticleBackground'
 import chatContent from './content';
 import SignUp from './pages/SignUp';
 import EditUser from './pages/EditUserPage';
+import ChatList from './pages/ChatList';
 
 
 
@@ -53,10 +54,14 @@ function App() {
             <Route path="/Rooms/:index">
               <BaseChat chatContent = {chatContent}/>
             </Route>
+            <Route exact path="/ChatRooms">
+              <ChatList/>
+            </Route>
           </Switch>
           <Footer />
+          <ParticleBackground className='particle-background'></ParticleBackground>
         </div>
-        <ParticleBackground></ParticleBackground>
+        
       </div>
     
 

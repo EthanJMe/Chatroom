@@ -19,7 +19,7 @@ function About() {
                             </div>
                             <p>A group of computer enthusiasts from Wyoming and
                                 Nebraska, Ethan, Dustin, and Solomon all enjoy
-                                discussing computers.
+                                discussing computers. . .<br/>Computers
                                 <br />
                             </p>
                         </div>
