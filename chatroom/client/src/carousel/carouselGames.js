@@ -10,6 +10,7 @@ function GamesCarousel({content}) {
         {content.map((item, index) => {
           return (
               <Carousel.Item>
+                <Link to = {`/Rooms/${6+index}`}>
                 <img
                   className="d-block w-100"
                   src={item.carouselImg}
@@ -19,7 +20,9 @@ function GamesCarousel({content}) {
                   <h3>{item.carouselTitle}</h3>
                   <p>{item.carouselCaption}</p>
                 </Carousel.Caption>
+                </Link>
               </Carousel.Item>
+              
           )
         })}
       </Carousel>
