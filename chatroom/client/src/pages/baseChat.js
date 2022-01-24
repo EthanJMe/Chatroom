@@ -104,6 +104,14 @@ function BaseChat(props) {
                                 </Col>
 
                             </Row>
+                            <Row>
+                        <Col className="top">
+                            <Form className="messageForm center" onSubmit={handleSubmit}>
+                                <Form.Control type="text" placeholder="enter your message here" onChange={updateField} name="message" />
+                                <Button onClick={handleSubmit}>Send</Button>
+                            </Form>
+                        </Col>
+                    </Row>
                         </Col>
                     </Row>
                 </Container>
