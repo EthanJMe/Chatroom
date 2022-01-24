@@ -4,7 +4,7 @@ import { redux_addChat } from "../state/chatSlice"
 const ENDPOINT = "http://localhost:5000"
 
 
-const socket = io(ENDPOINT);
+// const socket = io(ENDPOINT);
 
 // const socket = io(ENDPOINT);
 
